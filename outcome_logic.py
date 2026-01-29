@@ -13,7 +13,7 @@
 # PayPal: kaushal.shastry@outlook.com
 #-----------------------------------------------------------------------------------------------------------------------
 
-import random
+import random2
 from nicegui import ui
 
 
@@ -73,8 +73,8 @@ def seven_outcome(die):
             dialog_loss()
 
 def random_die():
-    out1 = random.choice([1,2,3,4,5,6])
-    out2 = random.choice([1,2,3,4,5,6])
+    out1 = random2.choice([1,2,3,4,5,6])
+    out2 = random2.choice([1,2,3,4,5,6])
 
     print(out1,out2)
     seven_outcome(out1+out2)
