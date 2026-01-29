@@ -1,4 +1,2 @@
-from nicegui import ui;
-from outcome_logic import random_die, player_bet;
-import random;
-from nicegui import ui;
+nicegui 
+random
