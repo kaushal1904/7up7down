@@ -50,13 +50,12 @@ def home_page():
 
             rd.tailwind.align_self('center').text_color('orange-300')
 
-        with ui.footer().classes('bg-white text-black justify-start'):
-            ui.label('Designed and developed by kaushal.shastry@outlook.com © 2026').style('font-family: "Roboto"')
+    with ui.footer().classes('bg-white text-black justify-start'):
+    	ui.label('Designed and developed by kaushal.shastry@outlook.com © 2026').style('font-family: "Roboto"')
 
-        def playagain():
-                pa = ui.button('Play again!', icon='sync', color='purple-600',
-                                on_click=lambda: ui.navigate.to('home_page'))
-                pa.tailwind.align_self('center').text_color('orange-300')
+    def playagain():
+    	pa = ui.button('Play again!', icon='sync', color='purple-600', on_click=lambda: ui.navigate.to('home_page'))
+    	pa.tailwind.align_self('center').text_color('orange-300')
 
     ui.run()
 home_page()
