@@ -19,12 +19,14 @@ from outcome_logic import random_die, player_bet
 @ui.page('/home_page')
 
 def home_page():
+
     ui.audio('Assets/Audio/casino-walk-around_bgm.mp3', autoplay=True).set_visibility(False)
-    with ui.image('Assets/Images/casinobanner.jpg'):
+
+    with ui.image('Assets/Images/casinobanner.jpg').classes('w-full h-screen p-4'):
         with ui.card().classes('fixed-center'):
             ui.image('Assets/Images/casinobannergif.webp').tailwind.border_radius('md')
 
-            with ui.row():
+            with ui.row().classes('items-center justify-center'):
                 with ui.card() as sevendown:
                         sevendown.tailwind.background_color('red-700')
                         ui.image('Assets/Images/7num.jpg')
@@ -50,15 +52,14 @@ def home_page():
 
             rd.tailwind.align_self('center').text_color('orange-300')
 
-    with ui.footer().classes('bg-white text-black justify-start'):
-    	ui.label('Designed and developed by kaushal.shastry@outlook.com © 2026').style('font-family: "Roboto"')
+    with ui.footer().classes('bg-white text-black w-full justify-between items-center'):
+        ui.label('Designed and developed by kaushal.shastry@outlook.com © 2026').style('font-family: "Roboto"')
+        ui.label('Built for big screens').style('font-family: "Roboto"')
 
-    def playagain():
-    	pa = ui.button('Play again!', icon='sync', color='purple-600', on_click=lambda: ui.navigate.to('home_page'))
-    	pa.tailwind.align_self('center').text_color('orange-300')
+        def playagain():
+            pa = ui.button('Play again!', icon='sync', color='purple-600',
+                                    on_click=lambda: ui.navigate.to('home_page'))
+            pa.tailwind.align_self('center').text_color('orange-300')
 
     ui.run()
 home_page()
-
-
-
