@@ -13,14 +13,13 @@
 # PayPal: kaushal.shastry@outlook.com
 #-----------------------------------------------------------------------------------------------------------------------
 
+import httpx
 from nicegui import ui
 from outcome_logic import random_die, player_bet
-import httpx
 
 
-@ui.page('/home_page', title='7up7down')
-
-def home_page():
+@ui.page('/', title='7up7down')
+def page():
 
     ui.audio('Assets/Audio/casino-walk-around_bgm.mp3', autoplay=True).set_visibility(False)
 
@@ -74,11 +73,8 @@ def home_page():
 
         def playagain():
             pa = ui.button('Play again!', icon='sync', color='purple-600',
-                                    on_click=lambda: ui.navigate.to('home_page'))
+                                    on_click=lambda: ui.navigate.to('/'))
             pa.tailwind.align_self('center').text_color('orange-300')
-    ui.run(favicon='Assets/Images/7num_favicon.png')
-
-home_page()
 
 
 @ui.page('/health',title='Health check - 7up7down')
@@ -93,8 +89,5 @@ async def health():
         else:
             ui.label(f'Server down with status code: {response.status_code}')
 
-
-
-
-
+ui.run(favicon='Assets/Images/7num_favicon.png',title='7up7down')
 
