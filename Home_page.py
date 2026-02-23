@@ -1,4 +1,4 @@
-# Python application ~ 7up7down game Home_page.py v1.0
+# Python application ~ 7up7down game Home_page.py v2.0
 #-----------------------------------------------------------------------------------------------------------------------
 
 # Readme file for more details
