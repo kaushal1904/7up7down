@@ -1,4 +1,4 @@
-# Python application ~ 7up7down game outcome_logic.py v1.0
+# Python application ~ 7up7down game outcome_logic.py v1.1
 #-----------------------------------------------------------------------------------------------------------------------
 
 # Readme file for more details
@@ -88,7 +88,7 @@ def dialog_win():
     with ui.dialog() as wdialog, ui.card().style('width: 400px;background-color: #fdba74'):
         wdialog.tailwind.text_color('orange-300').font_size('3xl').background_color('orange-300')
         ui.image(big_win_img)
-        paw = ui.button('Play again!',icon='sync',color='purple-600', on_click=lambda: ui.navigate.to('home_page'))
+        paw = ui.button('Play again!',icon='sync',color='purple-600', on_click=lambda: ui.navigate.to('/'))
         paw.tailwind.align_self('center').text_color('orange-300')
     wdialog.open()
 
@@ -96,7 +96,7 @@ def dialog_jack_win():
     with ui.dialog() as wdialog, ui.card().style('width: 400px;background-color: #fdba74'):
         wdialog.tailwind.text_color('orange-300').font_size('3xl').background_color('orange-300')
         ui.image(jp_img)
-        paw = ui.button('Play again!',icon='sync',color='purple-600', on_click=lambda: ui.navigate.to('home_page'))
+        paw = ui.button('Play again!',icon='sync',color='purple-600', on_click=lambda: ui.navigate.to('/'))
         paw.tailwind.align_self('center').text_color('orange-300')
     wdialog.open()
 
@@ -104,7 +104,7 @@ def dialog_loss():
     with ui.dialog() as ldialog, ui.card().style('width: 400px;background-color: maroon'):
         ldialog.tailwind.text_color('orange-300').font_size('3xl').background_color('red-400')
         ui.image(loss_img)
-        pal = ui.button('Play again!',icon='sync',color='purple-600', on_click=lambda: ui.navigate.to('home_page'))
+        pal = ui.button('Play again!',icon='sync',color='purple-600', on_click=lambda: ui.navigate.to('/'))
         pal.tailwind.align_self('center').text_color('orange-300')
     ldialog.open()
 
