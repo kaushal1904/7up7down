@@ -15,8 +15,10 @@
 
 from nicegui import ui
 from outcome_logic import random_die, player_bet
+import httpx
 
-@ui.page('/home_page')
+
+@ui.page('/home_page', title='7up7down')
 
 def home_page():
 
@@ -74,9 +76,25 @@ def home_page():
             pa = ui.button('Play again!', icon='sync', color='purple-600',
                                     on_click=lambda: ui.navigate.to('home_page'))
             pa.tailwind.align_self('center').text_color('orange-300')
-    ui.run()
+    ui.run(favicon='Assets/Images/7num_favicon.png')
 
 home_page()
+
+
+@ui.page('/health',title='Health check - 7up7down')
+async def health():
+    async with httpx.AsyncClient() as client:
+        response =  await client.get('https://sevenup7down-v1.onrender.com/')
+        print(response.status_code)
+
+        if response.status_code==200:
+            ui.label('Server up and running')
+
+        else:
+            ui.label(f'Server down with status code: {response.status_code}')
+
+
+
 
 
 
