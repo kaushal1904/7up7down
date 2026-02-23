@@ -52,14 +52,31 @@ def home_page():
 
             rd.tailwind.align_self('center').text_color('orange-300')
 
-    with ui.footer().classes('bg-white text-black w-full justify-between items-center'):
+    with ui.footer().classes('bg-white text-black justify-start items-center'):
+
         ui.label('Designed and developed by kaushal.shastry@outlook.com © 2026').style('font-family: "Roboto"')
-        ui.label('Built for big screens').style('font-family: "Roboto"')
+
+        with ui.row():
+            with ui.link(target='https://www.linkedin.com/in/kaushal-shastry/', new_tab=True):
+                ui.image('Assets/Images/linkedin.png').classes('w-8')
+
+            with ui.link(target='https://www.youtube.com/@kaushalshastry6973', new_tab=True):
+                ui.image('Assets/Images/youtube.png').classes('w-8')
+
+            with ui.link(target='https://github.com/kaushal1904/projects', new_tab=True):
+                ui.image('Assets/Images/github.png').classes('w-8')
+
+        ui.space()
+
+        ui.label('Built for big screens').classes('justify-end')
 
         def playagain():
             pa = ui.button('Play again!', icon='sync', color='purple-600',
                                     on_click=lambda: ui.navigate.to('home_page'))
             pa.tailwind.align_self('center').text_color('orange-300')
-
     ui.run()
+
 home_page()
+
+
+
