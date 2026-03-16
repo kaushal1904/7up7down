@@ -55,7 +55,7 @@ def page():
 
     with ui.footer().classes('bg-white text-black justify-start items-center'):
 
-        ui.label('Designed and developed by a human kaushal.shastry@outlook.com © 2026').style('font-family: "Roboto"')
+        ui.label('Designed and developed by kaushal.shastry@outlook.com © 2026').style('font-family: "Roboto"')
 
         with ui.row():
             with ui.link(target='https://www.linkedin.com/in/kaushal-shastry/', new_tab=True):
